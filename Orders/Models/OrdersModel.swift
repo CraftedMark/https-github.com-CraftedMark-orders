@@ -2,11 +2,9 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-
-
-
-struct Orders: Codable, Identifiable {
-    var id: String
+@Model
+final class Orders: PersistentModel {
+    @Attribute(.unique) var id: String
     var wooSignalId: Int
     var orderNumber: Int
     var status: String
@@ -45,9 +43,52 @@ struct Orders: Codable, Identifiable {
     // Adding customer name from People model
     var customerName: String
 
-   @Relationship(deleteRule: .nullify, inverse: \People.orders)
+    @Relationship(deleteRule: .nullify, inverse: \People.orders)
     var people: People
     
     @Relationship(deleteRule: .nullify, inverse: \Product.orders)
     var products: [Product]
+
+    init(id: String, wooSignalId: Int, orderNumber: Int, status: String, currency: String, dateCreated: Date, dateModified: Date, discountTotal: Double, discountTax: Double, shippingTotal: Double, shippingTax: Double, cartTax: Double, total: Double, totalTax: Double, pricesIncludeTax: Bool, customerId: Int, customerIpAddress: String, customerUserAgent: String, customerNote: String, billing: Address, shipping: Address, paymentMethod: String, paymentMethodTitle: String, transactionId: String, datePaid: Date?, dateCompleted: Date?, cartHash: String, metaData: [MetaData], lineItems: [LineItems], taxLines: [TaxLines], shippingLines: [ShippingLines], feeLines: [FeeLines], couponLines: [CouponLines], refunds: [Refunds], _links: Links, customerName: String, people: People, products: [Product]) {
+        self.id = id
+        self.wooSignalId = wooSignalId
+        self.orderNumber = orderNumber
+        self.status = status
+        self.currency = currency
+        self.dateCreated = dateCreated
+        self.dateModified = dateModified
+        self.discountTotal = discountTotal
+        self.discountTax = discountTax
+        self.shippingTotal = shippingTotal
+        self.shippingTax = shippingTax
+        self.cartTax = cartTax
+        self.total = total
+        self.totalTax = totalTax
+        self.pricesIncludeTax = pricesIncludeTax
+        self.customerId = customerId
+        self.customerIpAddress = customerIpAddress
+        self.customerUserAgent = customerUserAgent
+        self.customerNote = customerNote
+        self.billing = billing
+        self.shipping = shipping
+        self.paymentMethod = paymentMethod
+        self.paymentMethodTitle = paymentMethodTitle
+        self.transactionId = transactionId
+        self.datePaid = datePaid
+        self.dateCompleted = dateCompleted
+        self.cartHash = cartHash
+        self.metaData = metaData
+        self.lineItems = lineItems
+        self.taxLines = taxLines
+        self.shippingLines = shippingLines
+        self.feeLines = feeLines
+        self.couponLines = couponLines
+        self.refunds = refunds
+        self._links = _links
+        self.customerName = customerName
+        self.people = people
+        self.products = products
+    }
 }
+}
+
