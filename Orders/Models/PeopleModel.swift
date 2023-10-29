@@ -31,7 +31,7 @@ import SwiftData
     return Address(id: id, street: address1 ?? "", city: city ?? "", state: state ?? "", zip: zip ?? "")
     }
     // Assuming 'Order' is a model, the corrected code would look like this:
-    var orders: [Orders] = []
+    @Query var orders: [Orders] = []
 
     init(id: String, wooSignalId: Int, firstName: String, lastName: String, phone: String, email: String, brand: String?, address1: String?, address2: String?, city: String?, state: String?, zip: String?, customerBasedPricing: Bool?, accountNumber: String?, type: String?, notes: String?, createdDate: Date?, createdBy: String?, updatedDate: Date?, updatedBy: String?) {
         self.id = id

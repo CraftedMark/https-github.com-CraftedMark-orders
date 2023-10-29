@@ -35,7 +35,7 @@ class Product: Codable, Identifiable, PersistentModel { // Conform to Persistent
     var packaging: String?
     var activeIngredient: String? // Added active ingredient
 
-    var orders: [Orders]
+    @Query(entity: Orders.self) var orders: [Orders]
 
     // Initializer for 'Product'
     init(id: Int?, name: String, category: String, subCategory: String, subcat2: String, flavor: String, description: String, costOfGood: Double, manufacturingPrice: Double, wholesalePrice: Double, retailPrice: Double, stockQuantity: Int, backordered: Bool, supplier: String, manufacturerId: Int?, manufacturerName: String, itemSource: String, quantitySold: Int, quantityInStock: Int, type: String, imageUrl: String, packageWeightMeasure: String, packageWeight: Int, weightInGrams: Int, bulkPricing: Double?, perGramCost: Double, isAssemblyItem: Bool, dose: String?, packaging: String?, activeIngredient: String?, orders: [Orders]) {
