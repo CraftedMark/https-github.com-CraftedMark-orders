@@ -1,4 +1,7 @@
-@Model(remote: true)
+import Foundation
+import SwiftUI
+import SwiftData
+
 struct People: Codable, Identifiable {
     var id: String
     var wooSignalId: Int
@@ -25,5 +28,6 @@ struct People: Codable, Identifiable {
         return "\(firstName) \(lastName)"
     }
 }
-   @Relationship(deleteRule: .nullify, inverse: \Orders.people)
-var orders: [Order]
+   // Assuming 'Order' is a model, the corrected code would look like this:
+   var orders: [Orders] = []
+

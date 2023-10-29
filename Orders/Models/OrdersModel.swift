@@ -1,4 +1,10 @@
-@Model(remote: true)
+import Foundation
+import SwiftUI
+import SwiftData
+
+
+
+
 struct Orders: Codable, Identifiable {
     var id: String
     var wooSignalId: Int
