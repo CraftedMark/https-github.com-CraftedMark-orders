@@ -19,7 +19,9 @@ final class Orders: PersistentModel {
     var total: Double
     var totalTax: Double
     var pricesIncludeTax: Bool
-    var customerId: Int
+    // Linking the customerId to the id field in the People model
+    @Relationship(deleteRule: .nullify, inverse: \People.id)
+    var customerId: People
     var customerIpAddress: String
     var customerUserAgent: String
     var customerNote: String
@@ -49,7 +51,7 @@ final class Orders: PersistentModel {
     @Relationship(deleteRule: .nullify, inverse: \Product.orders)
     var products: [Product]
 
-    init(id: String, wooSignalId: Int, orderNumber: Int, status: String, currency: String, dateCreated: Date, dateModified: Date, discountTotal: Double, discountTax: Double, shippingTotal: Double, shippingTax: Double, cartTax: Double, total: Double, totalTax: Double, pricesIncludeTax: Bool, customerId: Int, customerIpAddress: String, customerUserAgent: String, customerNote: String, billing: Address, shipping: Address, paymentMethod: String, paymentMethodTitle: String, transactionId: String, datePaid: Date?, dateCompleted: Date?, cartHash: String, metaData: [MetaData], lineItems: [LineItems], taxLines: [TaxLines], shippingLines: [ShippingLines], feeLines: [FeeLines], couponLines: [CouponLines], refunds: [Refunds], _links: Links, customerName: String, people: People, products: [Product]) {
+    init(id: String, wooSignalId: Int, orderNumber: Int, status: String, currency: String, dateCreated: Date, dateModified: Date, discountTotal: Double, discountTax: Double, shippingTotal: Double, shippingTax: Double, cartTax: Double, total: Double, totalTax: Double, pricesIncludeTax: Bool, customerId: People, customerIpAddress: String, customerUserAgent: String, customerNote: String, billing: Address, shipping: Address, paymentMethod: String, paymentMethodTitle: String, transactionId: String, datePaid: Date?, dateCompleted: Date?, cartHash: String, metaData: [MetaData], lineItems: [LineItems], taxLines: [TaxLines], shippingLines: [ShippingLines], feeLines: [FeeLines], couponLines: [CouponLines], refunds: [Refunds], _links: Links, customerName: String, people: People, products: [Product]) {
         self.id = id
         self.wooSignalId = wooSignalId
         self.orderNumber = orderNumber

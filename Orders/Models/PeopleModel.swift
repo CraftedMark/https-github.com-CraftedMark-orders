@@ -27,6 +27,9 @@ import SwiftData
     var customerName: String {
         return "\(firstName) \(lastName)"
     }
+    var address: Address {
+    return Address(id: id, street: address1 ?? "", city: city ?? "", state: state ?? "", zip: zip ?? "")
+    }
     // Assuming 'Order' is a model, the corrected code would look like this:
     var orders: [Orders] = []
 
