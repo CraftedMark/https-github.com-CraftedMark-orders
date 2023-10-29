@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SwiftData
 
+
 @Model
 final class Orders: PersistentModel {
     @Attribute(.unique) var id: String
@@ -33,13 +34,13 @@ final class Orders: PersistentModel {
     var datePaid: Date?
     var dateCompleted: Date?
     var cartHash: String
-    var metaData: [MetaData]
-    var lineItems: [LineItems]
-    var taxLines: [TaxLines]
-    var shippingLines: [ShippingLines]
-    var feeLines: [FeeLines]
-    var couponLines: [CouponLines]
-    var refunds: [Refunds]
+   // var metaData: [MetaData]
+   // var lineItems: [lineItems]
+    //var taxLines: [TaxLines]
+    //var shippingLines: [ShippingLines]
+    //var feeLines: [FeeLines]
+    //var couponLines: [CouponLines]
+    //var refunds: [Refunds]
     var _links: Links
 
     // Adding customer name from People model
@@ -47,11 +48,15 @@ final class Orders: PersistentModel {
 
     @Relationship(deleteRule: .nullify, inverse: \People.orders)
     var people: People
+
+    @Relationship(deleteRule: .nullify, inverse: \LineItem.order)
+    var lineItems: [LineItem]
+
     
     @Relationship(deleteRule: .nullify, inverse: \Product.orders)
     var products: [Product]
 
-    init(id: String, wooSignalId: Int, orderNumber: Int, status: String, currency: String, dateCreated: Date, dateModified: Date, discountTotal: Double, discountTax: Double, shippingTotal: Double, shippingTax: Double, cartTax: Double, total: Double, totalTax: Double, pricesIncludeTax: Bool, customerId: People, customerIpAddress: String, customerUserAgent: String, customerNote: String, billing: Address, shipping: Address, paymentMethod: String, paymentMethodTitle: String, transactionId: String, datePaid: Date?, dateCompleted: Date?, cartHash: String, metaData: [MetaData], lineItems: [LineItems], taxLines: [TaxLines], shippingLines: [ShippingLines], feeLines: [FeeLines], couponLines: [CouponLines], refunds: [Refunds], _links: Links, customerName: String, people: People, products: [Product]) {
+    init(id: String, wooSignalId: Int, orderNumber: Int, status: String, currency: String, dateCreated: Date, dateModified: Date, discountTotal: Double, discountTax: Double, shippingTotal: Double, shippingTax: Double, cartTax: Double, total: Double, totalTax: Double, pricesIncludeTax: Bool, customerId: People, customerIpAddress: String, customerUserAgent: String, customerNote: String, billing: Address, shipping: Address, paymentMethod: String, paymentMethodTitle: String, transactionId: String, datePaid: Date?, dateCompleted: Date?, cartHash: String, /*metaData: [MetaData],*/ lineItems: [lineItems], /*taxLines: [TaxLines], shippingLines: [ShippingLines], feeLines: [FeeLines], couponLines: [CouponLines], refunds: [Refunds], _links: Links,*/ customerName: String, people: People, products: [Product]) {
         self.id = id
         self.wooSignalId = wooSignalId
         self.orderNumber = orderNumber
@@ -79,13 +84,13 @@ final class Orders: PersistentModel {
         self.datePaid = datePaid
         self.dateCompleted = dateCompleted
         self.cartHash = cartHash
-        self.metaData = metaData
+//        self.metaData = metaData
         self.lineItems = lineItems
-        self.taxLines = taxLines
-        self.shippingLines = shippingLines
-        self.feeLines = feeLines
-        self.couponLines = couponLines
-        self.refunds = refunds
+//        self.taxLines = taxLines
+//        self.shippingLines = shippingLines
+//        self.feeLines = feeLines
+//        self.couponLines = couponLines
+//        self.refunds = refunds
         self._links = _links
         self.customerName = customerName
         self.people = people

@@ -16,6 +16,7 @@
 		457ADAA12AEE05BE0058F3F4 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457ADA9D2AEE05BE0058F3F4 /* OrdersModel.swift */; };
 		457ADAA22AEE05BE0058F3F4 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457ADA9E2AEE05BE0058F3F4 /* PeopleModel.swift */; };
 		457ADAA32AEE05BE0058F3F4 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457ADA9F2AEE05BE0058F3F4 /* ProductModel.swift */; };
+		45E3E41A2AEE1D0500A21ACD /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E3E4192AEE1D0500A21ACD /* LineItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		457ADA9D2AEE05BE0058F3F4 /* OrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersModel.swift; sourceTree = "<group>"; };
 		457ADA9E2AEE05BE0058F3F4 /* PeopleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		457ADA9F2AEE05BE0058F3F4 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		45E3E4192AEE1D0500A21ACD /* LineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		457ADA9C2AEE05BE0058F3F4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				45E3E4192AEE1D0500A21ACD /* LineItem.swift */,
 				457ADA9D2AEE05BE0058F3F4 /* OrdersModel.swift */,
 				457ADA9E2AEE05BE0058F3F4 /* PeopleModel.swift */,
 				457ADA9F2AEE05BE0058F3F4 /* ProductModel.swift */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E3E41A2AEE1D0500A21ACD /* LineItem.swift in Sources */,
 				457ADAA12AEE05BE0058F3F4 /* OrdersModel.swift in Sources */,
 				457ADA8B2AEE059E0058F3F4 /* ContentView.swift in Sources */,
 				457ADA8D2AEE059E0058F3F4 /* Item.swift in Sources */,
